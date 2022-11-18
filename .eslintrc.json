@@ -13,7 +13,8 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier",
-    "plugin:tailwindcss/recommended"
+    "plugin:tailwindcss/recommended",
+    "plugin:storybook/recommended"
   ],
   "plugins": ["@typescript-eslint", "import", "unused-imports", "tailwindcss"],
   "rules": {
