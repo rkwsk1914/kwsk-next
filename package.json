@@ -11,7 +11,7 @@
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "postinstall": "husky install"
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@types/node": "18.11.9",
@@ -44,16 +44,21 @@
     "eslint-plugin-storybook": "^0.6.7",
     "eslint-plugin-tailwindcss": "^3.7.0",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "husky": "^8.0.2",
+    "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
     "postcss": "^8.4.19",
     "prettier": "^2.7.1",
     "tailwindcss": "^3.2.4"
   },
   "lint-staged": {
-    "src/*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
+    "*.js": [
+      "eslint",
       "prettier --write"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
