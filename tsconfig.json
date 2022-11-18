@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"] // ./src/components を @/components と書くことができる
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
