@@ -9,10 +9,8 @@ type ButtonProps = {
 
 export const Button = ({ href, children }: ButtonProps) => {
   return (
-    <Link href={href}>
-      <a className={styles.button}>
-        {children}
-      </a>
+    <Link href={href} className={styles.button}>
+      {children}
     </Link>
   );
 };
