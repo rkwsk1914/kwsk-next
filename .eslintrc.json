@@ -9,21 +9,22 @@
   "extends": [
     "next/core-web-vitals",
     "eslint:recommended",
+    "plugin:css-modules/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier",
     "plugin:tailwindcss/recommended",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "prettier"
   ],
-  "plugins": ["@typescript-eslint", "import", "unused-imports", "tailwindcss"],
+  "plugins": ["@typescript-eslint", "import", "unused-imports", "css-modules", "tailwindcss"],
   "rules": {
     // あった方が良さそうなルール
-    "semi": "error",
+    "semi": "off",
     "no-console": "warn",
     "no-var": "error",
     // import 文の順序に関するルール
-    "sort-imports": 0,
+    "sort-imports": "off",
     "no-unused-vars": "warn",
     "import/order": [
       "error",

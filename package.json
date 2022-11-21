@@ -8,7 +8,7 @@
     "start": "next start -p 4000",
     "lint": "next lint --dir src",
     "lint:fix": "next lint --dir src --fix",
-    "format": "npx stylelint './src/**/*.scss' --fix & prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
+    "format": "stylelint './src/**/*.scss' --fix & prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}' & next lint --dir src --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "lint-staged": "lint-staged"
@@ -45,6 +45,7 @@
     "babel-loader": "^8.3.0",
     "css-loader": "5.2.7",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-css-modules": "^2.11.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-storybook": "^0.6.7",
     "eslint-plugin-tailwindcss": "^3.7.0",
@@ -67,8 +68,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint",
-      "prettier --write"
+      "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
+      "eslint --fix 'src'"
     ]
   }
 }
