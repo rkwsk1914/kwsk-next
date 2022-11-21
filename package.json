@@ -8,7 +8,7 @@
     "start": "next start -p 4000",
     "lint": "next lint --dir src",
     "lint:fix": "next lint --dir src --fix",
-    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
+    "format": "npx stylelint './src/**/*.scss' --fix & prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "lint-staged": "lint-staged"
@@ -38,6 +38,7 @@
     "@storybook/preset-typescript": "^3.0.0",
     "@storybook/react": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
+    "@trivago/prettier-plugin-sort-imports": "^3.4.0",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
     "autoprefixer": "^10.4.13",
@@ -52,9 +53,16 @@
     "lint-staged": "^13.0.3",
     "postcss": "^8",
     "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
     "sass": "^1.56.1",
     "sass-loader": "10.1.1",
     "style-loader": "2.0.0",
+    "stylelint": "^14.15.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "stylelint-config-standard-scss": "^6.1.0",
+    "stylelint-order": "^5.0.0",
     "tailwindcss": "^3.2.4"
   },
   "lint-staged": {
