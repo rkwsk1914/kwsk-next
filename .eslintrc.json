@@ -29,17 +29,47 @@
     "import/order": [
       "error",
       {
+        // グループごとの並び順
         "groups": [
-          "builtin",
-          "external",
-          "internal",
-          ["parent", "sibling"],
-          "object",
-          "type",
-          "index"
+          "builtin", // 1. fsや path などの node "builtin" のモジュール
+          "external", // 2. npm install したパッケージ
+          "internal", // 3. webpack などでパス設定したモジュール
+          ["parent", "sibling"], // 4. 親階層と小階層のファイル
+          "object", // object"-imports
+          "type", // 型だけをインポートする type imports
+          "index" // 同階層のファイル
         ],
-        "newlines-between": "always",
-        "pathGroupsExcludedImportTypes": ["builtin"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "next/**",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "API",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "graphql/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "**\\.css",
+            "group": "index",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react", "next/**"],
+        // グループごとに改行を入れる
+        "newlines-between": "always", // "never" を指定すると改行なし
+        // アルファベット順・大文字小文字を区別しない
         "alphabetize": { "order": "asc", "caseInsensitive": true }
       }
     ],
