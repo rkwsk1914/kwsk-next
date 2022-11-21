@@ -11,10 +11,12 @@ export default {
   },
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args: React.ComponentProps<typeof Button>) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args: React.ComponentProps<typeof Button>) => (
+  <Button {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
-  href: "/",
-  children: "Buttons",
+  href: '/',
+  children: 'Buttons',
 };
