@@ -16,8 +16,14 @@ const Template: ComponentStory<typeof Button> = (args: React.ComponentProps<type
   <Button {...args} />
 )
 
-export const Primary = Template.bind({})
-Primary.args = {
+export const Default = Template.bind({})
+Default.args = {
   href: '/',
   children: 'Buttons',
+}
+
+export const Primary = Template.bind({})
+Primary.args = {
+  children: 'Buttons',
+  onClick:() => {console.log('OK')}
 }
