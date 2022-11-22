@@ -16,6 +16,7 @@ module.exports = {
     },
     '@storybook/preset-scss',
     '@storybook/addon-actions',
+    '@storybook/addon-viewport/register'
   ],
   framework: '@storybook/react',
   core: {

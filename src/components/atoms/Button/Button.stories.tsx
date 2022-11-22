@@ -25,5 +25,5 @@ Default.args = {
 export const Primary = Template.bind({})
 Primary.args = {
   children: 'Buttons',
-  onClick:() => {console.log('OK')}
+  onClick:() => { return 0}
 }

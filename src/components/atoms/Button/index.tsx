@@ -2,7 +2,7 @@ import React from 'react'
 
 import Link from 'next/link'
 
-import styles from './Button.module.scss'
+// import styles from './style.module.scss'
 
 type ButtonProps = {
   href?: string
@@ -15,12 +15,12 @@ export const Button = React.forwardRef(
     if (href) {
       return (
         <Link href={href}>
-          <a className={styles.button}>{children}</a>
+          <a>{children}</a>
         </Link>
       )
     } else {
       return (
-        <button className={styles.button} type="button" ref={ref} onClick={onClick}>
+        <button type="button" ref={ref} onClick={onClick}>
           {children}
         </button>
       )

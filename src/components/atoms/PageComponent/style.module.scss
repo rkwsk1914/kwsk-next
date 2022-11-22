@@ -1,0 +1,10 @@
+.content {
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 100px;
+  padding: 0 15px;
+
+  @screen small {
+    padding: 0 30px;
+  }
+}
