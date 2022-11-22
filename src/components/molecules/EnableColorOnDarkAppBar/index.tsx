@@ -1,42 +1,61 @@
 import * as React from 'react';
 
-
+import MenuIcon from '@mui/icons-material/Menu';
 import AppBar from '@mui/material/AppBar';
-import Stack from '@mui/material/Stack';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Drawer from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 
-import { AppBarLabel } from './../../atoms/AppBarLabel';
+import { AnchorType } from './../../../type'
+import { MenuBoxList } from './../../atoms/MenuBoxList'
 
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-    primary: {
-      main: '#1976d2',
-    },
-  },
-});
+type Props = React.ComponentProps<typeof MenuBoxList>;
 
-type Props = {
-  dark?: boolean;
-};
+export const EnableColorOnDarkAppBar: React.FC<Props> = (
+  {
+    anchor = 'left',
+    listData,
+  }
+): JSX.Element => {
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
 
-export const EnableColorOnDarkAppBar: React.FC<Props> = ({
-  dark = false
-}) => {
+  const toggleDrawer =
+    (anchor: AnchorType, open: boolean) =>
+    (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event.type === 'keydown' &&
+        ((event as React.KeyboardEvent).key === 'Tab' ||
+          (event as React.KeyboardEvent).key === 'Shift')
+      ) {
+        return;
+      }
+
+      setState({ ...state, [anchor]: open });
+    };
+
   return (
-    <Stack spacing={2} sx={{ flexGrow: 1 }}>
-      <ThemeProvider theme={darkTheme}>
-        {dark && (
-          <AppBar position="static" color="primary" enableColorOnDark>
-            <AppBarLabel label='enableColorOnDark'></AppBarLabel>
-          </AppBar>
-        )}
-        {!dark && (
-          <AppBar position="static" color="primary">
-            <AppBarLabel label='default'></AppBarLabel>
-          </AppBar>
-        )}
-      </ThemeProvider>
-    </Stack>
+    <AppBar position="static">
+      <Toolbar>
+        <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }} onClick={toggleDrawer(anchor, true)}>
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
+          menu
+        </Typography>
+      </Toolbar>
+      <Drawer
+        anchor={anchor}
+        open={state[anchor]}
+        onClose={toggleDrawer(anchor, false)}
+      >
+        <MenuBoxList anchor={anchor} listData={listData}/>
+      </Drawer>
+    </AppBar>
   );
 }
