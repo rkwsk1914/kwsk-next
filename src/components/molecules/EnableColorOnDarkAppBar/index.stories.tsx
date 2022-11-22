@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import {EnableColorOnDarkAppBar as StoryComponent} from '.'
 
 export default {
-  title: 'Atoms/EnableColorOnDarkAppBar',
+  title: 'Molecules/EnableColorOnDarkAppBar',
   component: StoryComponent,
   argTypes: {
     dark: {
@@ -21,4 +21,9 @@ const Template: ComponentStory<typeof StoryComponent> = (args?: React.ComponentP
 export const Default = Template.bind({})
 Default.args = {
   dark: false,
+}
+
+export const Dark = Template.bind({})
+Dark.args = {
+  dark: true,
 }
