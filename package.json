@@ -15,6 +15,7 @@
     "lint-staged": "lint-staged"
   },
   "dependencies": {
+    "@material/top-app-bar": "^14.0.0",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
@@ -28,6 +29,12 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@fontsource/roboto": "^4.5.8",
+    "@mui/icons-material": "^5.10.15",
+    "@mui/material": "^5.10.15",
+    "@mui/styled-engine-sc": "^5.10.14",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addon-interactions": "^6.5.13",
@@ -60,6 +67,7 @@
     "sass": "^1.56.1",
     "sass-loader": "10.1.1",
     "style-loader": "2.0.0",
+    "styled-components": "^5.3.6",
     "stylelint": "^14.15.0",
     "stylelint-config-prettier": "^9.0.4",
     "stylelint-config-prettier-scss": "^0.0.1",
