@@ -7,12 +7,12 @@ import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
-import { AnchorType } from './../../../type'
-import { MenuBoxList } from './../../atoms/MenuBoxList'
+import { AnchorType } from '../../../type'
+import { MenuBoxList } from '../../atoms/MenuBoxList'
 
 type Props = React.ComponentProps<typeof MenuBoxList>;
 
-export const EnableColorOnDarkAppBar: React.FC<Props> = (
+export const TopMenu: React.FC<Props> = (
   {
     anchor = 'left',
     listData,

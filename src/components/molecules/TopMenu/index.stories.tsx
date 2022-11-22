@@ -4,10 +4,10 @@ import MailIcon from '@mui/icons-material/Mail';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import {EnableColorOnDarkAppBar as StoryComponent} from '.'
+import {TopMenu as StoryComponent} from '.'
 
 export default {
-  title: 'Molecules/EnableColorOnDarkAppBar',
+  title: 'Molecules/TopMenu',
   component: StoryComponent,
   argTypes: {
     anchor: {
