@@ -30,16 +30,26 @@ const darkTheme = createTheme({
   },
 });
 
-export const EnableColorOnDarkAppBar: React.FC = () => {
+type Props = {
+  dark?: boolean;
+};
+
+export const EnableColorOnDarkAppBar: React.FC<Props> = ({
+  dark = false
+}) => {
   return (
     <Stack spacing={2} sx={{ flexGrow: 1 }}>
       <ThemeProvider theme={darkTheme}>
-        <AppBar position="static" color="primary" enableColorOnDark>
-          {appBarLabel('enableColorOnDark')}
-        </AppBar>
-        <AppBar position="static" color="primary">
-          {appBarLabel('default')}
-        </AppBar>
+        {dark && (
+          <AppBar position="static" color="primary" enableColorOnDark>
+            {appBarLabel('enableColorOnDark')}
+          </AppBar>
+        )}
+        {!dark && (
+          <AppBar position="static" color="primary">
+            {appBarLabel('default')}
+          </AppBar>
+        )}
       </ThemeProvider>
     </Stack>
   );
