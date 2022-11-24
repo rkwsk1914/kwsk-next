@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: LeagueScript-Regular;
+  src: url('/fonts/LeagueScript-Regular.ttf') format("truetype");
+  font-display: swap;
+}
+
+/*
+  明朝体
+  @extend .inheritance-font-mincho;
+*/
+@font-face {
+  font-family: PTSerif-Regula;
+  src: url('/fonts/Rosarivo-Regular.ttf') format("truetype");
+  font-display: swap;
+}
+
+/*
+  ベース
+  @extend .inheritance-font-base;
+*/
+@font-face {
+  font-family: NotoSansJP-Regular;
+  src: url('/fonts/NotoSansJP-Regular.otf') format("opentype");
+  font-display: swap;
+}
