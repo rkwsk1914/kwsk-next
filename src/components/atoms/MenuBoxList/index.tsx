@@ -49,12 +49,12 @@ export const MenuBoxList: React.FC<Props> = (
 
   const createList = (listData: MenuListType) => {
     return listData.map((listItemData, index) => (
-        <>
+        <React.Fragment key={index}>
           {index > 0 && <Divider />}
           <List>
             {createlistItme(listItemData)}
           </List>
-        </>
+        </React.Fragment>
       )
     )
   }
