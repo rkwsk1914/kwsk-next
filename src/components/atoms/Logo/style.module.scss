@@ -1,0 +1,51 @@
+@import "./../../../styles/responsive-px";
+
+.logo {
+  @apply font-ming;
+
+  display: block;
+  text-align: center;
+  width: max-content;
+
+  .main {
+    display: block;
+    font-size: 30px;
+
+    @screen small {
+      font-size: responsivepx(30);
+    }
+  }
+
+  .sub {
+    @apply font-cursive;
+
+    border-top: 1px solid;
+    display: block;
+    font-size: 10px;
+    margin: -10px 0 0;
+    padding: 7px 0 0;
+    width: 100%;
+
+    @screen small {
+      font-size: responsivepx(10);
+      margin: responsivepx(-10) 0 0 0;
+      padding: responsivepx(7) 0 0;
+    }
+  }
+}
+
+.colorblack {
+  color: #333;
+
+  .sub {
+    border-color: #333;
+  }
+}
+
+.colorwhite {
+  color: #fff;
+
+  .sub {
+    border-color: #fff;
+  }
+}

@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  筆記体
+*/
 @font-face {
   font-family: LeagueScript-Regular;
   src: url('/fonts/LeagueScript-Regular.ttf') format("truetype");
@@ -9,8 +12,16 @@
 }
 
 /*
+  ゴシック
+*/
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('/fonts/Poppins-Regular.ttf') format("truetype");
+  font-display: swap;
+}
+
+/*
   明朝体
-  @extend .inheritance-font-mincho;
 */
 @font-face {
   font-family: PTSerif-Regula;
@@ -20,7 +31,6 @@
 
 /*
   ベース
-  @extend .inheritance-font-base;
 */
 @font-face {
   font-family: NotoSansJP-Regular;

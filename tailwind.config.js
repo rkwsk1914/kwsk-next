@@ -14,7 +14,10 @@ module.exports = {
       // Serif 体がメインの場合は、 `...defaultTheme.fontFamily.serif` を展開する
       ja: [...defaultTheme.fontFamily.sans],
       en: [...defaultTheme.fontFamily.sans],
-      NotoSansJP: ["NotoSansJP-Regular"]
+      base: ["NotoSansJP-Regular"],
+      cursive: ["LeagueScript-Regular"],
+      ming: ["PTSerif-Regula"],
+      gothic: ["Poppins-Regular"],
     },
     extend: {
       extend: {
